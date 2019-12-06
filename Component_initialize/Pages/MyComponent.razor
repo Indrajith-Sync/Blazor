@@ -1,0 +1,14 @@
+﻿@page "/"
+
+@*Doing an Action here*@
+@updateValue
+
+@code {
+    private string updateValue { get; set; }
+
+    public void Alert(string args)
+    {
+        updateValue = args;
+        this.StateHasChanged(); //Getting an exception error here.
+    }
+}

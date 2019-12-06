@@ -1,0 +1,15 @@
+﻿@page "/"
+
+<button @onclick="@clicked">Alert</button>
+
+@code {
+    //Initializing My Component
+    MyComponent compObj = new MyComponent();
+
+    //Action to be taken after ButtonClick
+    private void clicked()
+    {
+        compObj.Alert("Hai msg");
+    }
+
+}
