@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<button class="e-btn" @onclick="@OnButtonClicked">Change</button>
+
+<div>
+    @updatedValue
+</div>
+
+@code {
+
+    private string updatedValue { get; set; } = "Inital value";
+
+    public async void OnButtonClicked()
+    {
+        await Task.Delay(500); // My first delay task
+        System.Diagnostics.Debug.WriteLine("Before first await");
+        this.updatedValue = "First await";
+        this.StateHasChanged();
+        System.Diagnostics.Debug.WriteLine("after first await");
+        await Task.Delay(200); // My second delay task
+        System.Diagnostics.Debug.WriteLine("Before second await");
+        this.updatedValue = "Second await";
+        System.Diagnostics.Debug.WriteLine("after second await");
+    }
+}
+
